@@ -15,4 +15,16 @@
         align-items: center;
         gap: 20px;
     }
+
+    .nav-dropdown-trajet {
+        background-color: $pink;
+        border-color: $pink;
+        color: $white;
+    }
+
+    .nav-dropdown-profil {
+        background-color: $blue;
+        border-color: $blue;
+        color: $white;
+    }
 }
