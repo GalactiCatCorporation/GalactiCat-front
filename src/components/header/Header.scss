@@ -1,0 +1,30 @@
+@import '/src/variables';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:90%;
+    margin: 10px auto 0;
+    padding:20px 30px;
+    border-radius: 100px;
+    background-color: $black;
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nav-dropdown-trajet {
+        background-color: $pink;
+        border-color: $pink;
+        color: $white;
+    }
+
+    .nav-dropdown-profil {
+        background-color: $blue;
+        border-color: $blue;
+        color: $white;
+    }
+}
