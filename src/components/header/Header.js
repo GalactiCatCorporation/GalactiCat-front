@@ -1,8 +1,7 @@
 import React from 'react';
 import './Header.scss';
-import variables from '../../variables.scss';
 import { Link } from "react-router-dom";
-import { Menu, Button, Avatar, Image, MantineProvider  } from '@mantine/core';
+import { Menu, Button, Avatar, Image  } from '@mantine/core';
 import { BiSearch, BiArrowToTop, BiLogOut, BiPlanet, BiRocket } from "react-icons/bi";
 import avatar from '../../assets/img/avatar.png';
 import logo from '../../assets/img/logo-galacticat.png';
@@ -10,14 +9,6 @@ import logo from '../../assets/img/logo-galacticat.png';
 function Header() {
   return (
     <>
-    <MantineProvider
-      theme={{
-        colors: {
-          'pink': [variables.pink],
-        },
-      }}
-    ></MantineProvider>
-
       <div className='header'>
         <div className='header-logo'>
           <Link to='/'>
@@ -27,7 +18,7 @@ function Header() {
         <div className='header-nav'>
           <Menu shadow="md" width={200}>
             <Menu.Target>
-              <Button color="pink">Nouveau trajet</Button>
+              <Button className='button-pink'>Nouveau trajet</Button>
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-trajet'>

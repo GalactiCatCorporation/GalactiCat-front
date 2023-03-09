@@ -16,15 +16,43 @@
         gap: 20px;
     }
 
-    .nav-dropdown-trajet {
+    .button-pink, .button-pink:hover {
+        background-color: $pink;
+    }
+
+    .nav-dropdown-trajet, .nav-dropdown-trajet button[data-hovered="true"] {
         background-color: $pink;
         border-color: $pink;
         color: $white;
     }
 
-    .nav-dropdown-profil {
+    .nav-dropdown-trajet::before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        background-color: $pink;
+        position: absolute;
+        top:-5px;
+        left:50%;
+        transform: rotate(45deg);
+    }
+    .nav-dropdown-profil, .nav-dropdown-profil button[data-hovered="true"] {
         background-color: $blue;
         border-color: $blue;
+        color: $white;
+    }
+    .nav-dropdown-profil::before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        background-color: $blue;
+        position: absolute;
+        top:-5px;
+        left:50%;
+        transform: rotate(45deg);
+    }
+
+    .mantine-Menu-itemLabel, .mantine-Menu-itemIcon {
         color: $white;
     }
 }
