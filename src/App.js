@@ -6,6 +6,7 @@ import Signup from './views/auth/Signup';
 import Signin from './views/auth/Signin';
 import Header from './components/header/Header';
 import Publish from './views/publish/Publish';
+import Profil from './views/profil/Profil';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path='connexion' element={<Signin />} />
               <Route path='inscription' element={<Signup />} />
               <Route path='publier-trajet' element={<Publish />} />
+              <Route path='mon-compte' element={<Profil />} />
             </Route>
           </Routes>
         </div>

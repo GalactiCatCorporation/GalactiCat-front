@@ -13,14 +13,15 @@ function Signin() {
       <p>Vous n'avez pas encore de compte ? <a href="/inscription">Créer un compte</a></p>
       <div className='content'>
         <form>
-          <Input.Wrapper id={id} label="Pseudonyme" required maw={320} mx="auto">
+          <Input.Wrapper id={id} label="Pseudonyme" required>
             <Input
               component={IMaskInput}
               id={id}
               placeholder="Pseudonyme"
             />
           </Input.Wrapper>
-          <PasswordInput required maw={320} mx="auto"
+          <PasswordInput 
+            required
             placeholder="Mot de passe"
             label="Mot de passe"
             className='password'
