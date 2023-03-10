@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Signup from './views/auth/Signup';
 import Signin from './views/auth/Signin';
 import Header from './components/header/Header';
+import Publish from './views/publish/Publish';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path='connexion' element={<Signin />} />
               <Route path='inscription' element={<Signup />} />
+              <Route path='publier-trajet' element={<Publish />} />
             </Route>
           </Routes>
         </div>

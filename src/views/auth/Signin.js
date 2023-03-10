@@ -24,7 +24,6 @@ function Signin() {
             placeholder="Mot de passe"
             label="Mot de passe"
             className='password'
-            // description="Password must include at least one letter, number and special character"
             withAsterisk
           />
           <div className='submit-button'>

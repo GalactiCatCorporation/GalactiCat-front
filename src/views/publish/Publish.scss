@@ -1,0 +1,90 @@
+@import '/src/variables';
+
+.input {
+    margin-top: 20px;
+}
+
+.content {
+    background-color: $black;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.mantine-Input-icon {
+    background-color: $blue;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    color: $white;
+}
+
+.mantine-Input-wrapper {
+    border-radius: 10px;
+
+    .mantine-Input-input input {
+        margin-left: 10px;
+    }
+}
+
+.mantine-InputWrapper-root label {
+    font-size: 1rem;
+}
+
+.steps {
+    margin-top: 20px;
+
+    .step {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        .mantine-InputWrapper-root {
+            width: 100%;
+        }
+
+        .step-delete {
+            color: red;
+            cursor: pointer;
+        }
+    }
+
+    p {
+        text-align: left;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+button.mantine-DateTimePicker-input {
+    border-radius: 10px;
+    padding-left: 2.55rem !important;
+}
+
+.free-place {
+    margin-top: 20px;
+}
+
+.qty {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .lower, .more {
+        background-color: $blue;
+        height: 45px;
+        width: 45px;
+        border-radius: 30px;
+        border: none;
+        color: $white;
+        font-size: 2rem;
+
+        svg {
+            position: relative;
+            top: 4px;
+        }
+    }
+
+    span {
+        font-size: 2rem;
+    }
+}
+
