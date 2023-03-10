@@ -19,6 +19,16 @@ function Publish() {
         setStepList(stepList.filter((step) => step.key !== e.target.parentElement.key));
     }
 
+    const AddPlace = () => {
+        setPlace(place + 1);
+    }
+
+    const RemovePlace = () => {
+        if (place > 1) {
+            setPlace(place - 1);
+        }
+    }
+
     const Step = () => {
         return (
             <div className='step'>
@@ -83,9 +93,9 @@ function Publish() {
                     <div className="free-place">
                         <label>Nombre de place(s) disponible(s)</label>
                         <div className='qty'>
-                            <button type="button" className="lower" onClick={() => setPlace(place-1)}><HiMinusSmall /></button>
+                            <button type="button" className="lower" onClick={RemovePlace}><HiMinusSmall /></button>
                             <span>{place}</span>
-                            <button type="button" className="more" onClick={() => setPlace(place+1)}><HiPlusSmall /></button>
+                            <button type="button" className="more" onClick={AddPlace}><HiPlusSmall /></button>
                         </div>
                     </div>
                     <div className='submit-button'>
