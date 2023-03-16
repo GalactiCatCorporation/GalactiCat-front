@@ -16,16 +16,15 @@
         gap: 20px;
     }
 
-    .button-pink, .button-pink:hover {
-        background-color: $pink;
-    }
-
-    .nav-dropdown-trajet, .nav-dropdown-trajet button[data-hovered="true"] {
+    // Bouton Nouveau trajet
+    .nav-dropdown-trajet {
         background-color: $pink;
         border-color: $pink;
-        color: $white;
     }
-
+    .nav-dropdown-trajet button[data-hovered="true"] {
+        background-color: $pink-hover;
+        border-color: $pink-hover;
+    }
     .nav-dropdown-trajet::before {
         content: " ";
         width: 10px;
@@ -36,10 +35,20 @@
         left:50%;
         transform: rotate(45deg);
     }
-    .nav-dropdown-profil, .nav-dropdown-profil button[data-hovered="true"] {
+
+    // Bouton Nouveau trajet
+    button.mantine-ActionIcon-root:hover {
+        background-color: transparent;
+    }
+
+    // Bouton Profil
+    .nav-dropdown-profil {
         background-color: $blue;
         border-color: $blue;
-        color: $white;
+    }
+    .nav-dropdown-profil button[data-hovered="true"] {
+        background-color: $blue-hover;
+        border-color: $blue-hover;
     }
     .nav-dropdown-profil::before {
         content: " ";
@@ -52,7 +61,5 @@
         transform: rotate(45deg);
     }
 
-    .mantine-Menu-itemLabel, .mantine-Menu-itemIcon {
-        color: $white;
-    }
+
 }

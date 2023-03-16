@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.scss';
 import { Link } from "react-router-dom";
-import { Menu, Button, Avatar, Image  } from '@mantine/core';
-import { BiSearch, BiArrowToTop, BiLogOut, BiPlanet, BiRocket } from "react-icons/bi";
+import { Menu, Button, Avatar, Image, ActionIcon } from '@mantine/core';
+import { BiSearch, BiArrowToTop, BiLogOutCircle, BiPlanet, BiRocket, BiMessageRounded, BiLogInCircle } from "react-icons/bi";
 import avatar from '../../assets/img/avatar.png';
 import logo from '../../assets/img/logo-galacticat.png';
 
@@ -18,25 +18,30 @@ function Header() {
         <div className='header-nav'>
           <Menu shadow="md" width={200}>
             <Menu.Target>
-              <Button className='button-pink'>Nouveau trajet</Button>
+              <Button color="pink">Nouveau trajet</Button>
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-trajet'>
-              <Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item>
-              <Menu.Item icon={<BiSearch size={14} />}>Rechercher un trajet</Menu.Item>
+              <Link to=''><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiSearch size={14} />}>Rechercher un trajet</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>
+          <ActionIcon size="lg">
+            <Link to=''>
+              <BiMessageRounded size={36} fill="#fff"/>
+            </Link>
+          </ActionIcon>          
           <Menu shadow="md" width={200}>
             <Menu.Target>
                 <Avatar src={avatar} />
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-profil'>
-              <Link to='/connexion'><Menu.Item icon={<BiPlanet size={14} />}>Connexion</Menu.Item></Link>
-              <Link to='/inscription'><Menu.Item icon={<BiPlanet size={14} />}>Inscription</Menu.Item></Link>
-              <Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item>
-              <Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item>
-              <Menu.Item icon={<BiLogOut size={14} />}>Déconnexion</Menu.Item>
+              <Link to='/connexion'><Menu.Item icon={<BiLogInCircle size={14} />}>Connexion</Menu.Item></Link>
+              <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>
           
