@@ -36,8 +36,8 @@
         transform: rotate(45deg);
     }
 
-    // Bouton Nouveau trajet
-    button.mantine-ActionIcon-root:hover {
+    // Bouton Messagerie
+    button.nav-messagerie:hover, button.nav-avatar:hover {
         background-color: transparent;
     }
 
@@ -62,4 +62,59 @@
     }
 
 
+}
+
+.header-mobile {
+    position: absolute;
+    bottom:10px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: $black;
+    border-radius: 100px;
+    padding: 0px 10px;
+    width:80%;
+    max-width: 400px;
+    .header-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    // Bouton Messagerie
+    button.nav-messagerie:hover, button.nav-avatar:hover {
+        background-color: transparent;
+    }
+    // Bouton Nouveau trajet
+    .nav-new-trajet {
+        width:60px;
+        height: 60px;
+        transform: translateY(-50%);
+    }
+    .nav-dropdown-trajet {
+        background-color: $orange;
+        border-color: $orange;
+    }
+    .nav-dropdown-trajet button[data-hovered="true"] {
+        background-color: $orange-hover;
+        border-color: $orange-hover;
+    }
+
+    // Bouton Profil
+    .nav-dropdown-profil {
+        background-color: $blue;
+        border-color: $blue;
+    }
+    .nav-dropdown-profil button[data-hovered="true"] {
+        background-color: $blue-hover;
+        border-color: $blue-hover;
+    }
+}
+@media screen and (max-width:767px) {
+    .header {
+        display: none;
+    }
+}
+@media screen and (min-width:768px) {
+    .header-mobile {
+        display: none;
+    }
 }

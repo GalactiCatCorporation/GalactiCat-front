@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.scss';
 import { Link } from "react-router-dom";
 import { Menu, Button, Avatar, Image, ActionIcon } from '@mantine/core';
-import { BiSearch, BiArrowToTop, BiLogOutCircle, BiPlanet, BiRocket, BiMessageRounded, BiLogInCircle } from "react-icons/bi";
+import { BiSearch, BiArrowToTop, BiLogOutCircle, BiPlanet, BiRocket, BiMessageRounded, BiLogInCircle, BiPlus } from "react-icons/bi";
 import avatar from '../../assets/img/avatar.png';
 import logo from '../../assets/img/logo-galacticat.png';
 
@@ -26,14 +26,16 @@ function Header() {
               <Link to=''><Menu.Item icon={<BiSearch size={14} />}>Rechercher un trajet</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>
-          <ActionIcon size="lg">
+          <ActionIcon size="lg" className='nav-messagerie'>
             <Link to=''>
               <BiMessageRounded size={36} fill="#fff"/>
             </Link>
           </ActionIcon>          
           <Menu shadow="md" width={200}>
             <Menu.Target>
+              <ActionIcon size="lg" className='nav-avatar'>
                 <Avatar src={avatar} />
+              </ActionIcon>
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-profil'>
@@ -44,8 +46,44 @@ function Header() {
               <Link to=''><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>
-          
-          
+        </div>
+      </div>
+      <div className='header-mobile'>
+        <div className='header-nav'>
+          <ActionIcon size="lg" className='nav-messagerie'>
+            <Link to=''>
+              <BiMessageRounded size={36} fill="#fff"/>
+            </Link>
+          </ActionIcon>
+
+          <Menu shadow="md" width={200}>
+            <Menu.Target>
+            <ActionIcon size="lg" radius="xl" color="orange" variant="filled" className='nav-new-trajet'>
+              <BiPlus size={42} fill="#fff"/>
+            </ActionIcon>
+            </Menu.Target>
+
+            <Menu.Dropdown className='nav-dropdown-trajet'>
+              <Link to=''><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiSearch size={14} />}>Rechercher un trajet</Menu.Item></Link>
+            </Menu.Dropdown>
+          </Menu>
+
+          <Menu shadow="md" width={200}>
+            <Menu.Target>
+              <ActionIcon size="lg" className='nav-avatar'>
+                <Avatar src={avatar} />
+              </ActionIcon>
+            </Menu.Target>
+
+            <Menu.Dropdown className='nav-dropdown-profil'>
+              <Link to='/connexion'><Menu.Item icon={<BiLogInCircle size={14} />}>Connexion</Menu.Item></Link>
+              <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
+              <Link to=''><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
+            </Menu.Dropdown>
+          </Menu>
         </div>
       </div>
     </>
