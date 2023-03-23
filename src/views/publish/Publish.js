@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { HiOutlineMapPin, HiXMark, HiOutlineCalendarDays, HiMinusSmall, HiPlusSmall } from "react-icons/hi2";
 import { MultiSelect, Button } from '@mantine/core';
 import { DateTimePicker } from '@mantine/dates';
 import './Publish.scss';
 
 function Publish() {
-    const [startValue, setStartValue] = React.useState('');
-    const [endValue, setEndValue] = React.useState('');
-    const [stepList, setStepList] = React.useState([]);
-    const [stepValue, setStepValue] = React.useState('');
-    const [place, setPlace] = React.useState(1);
+    const [startValue, setStartValue] = useState('');
+    const [endValue, setEndValue] = useState('');
+    const [stepList, setStepList] = useState([]);
+    const [stepValue, setStepValue] = useState('');
+    const [place, setPlace] = useState(1);
 
     const AddStep = () => {
-        setStepList(stepList.concat(<Step key={stepList.length}></Step>));
+        setStepList(stepList.concat(<Step key={stepList.length} index={stepList.length} />));
     }
 
-    const DeleteStep = (e) => {
-        setStepList(stepList.filter((step) => step.key !== e.target.parentElement.key));
+    const handleDeleteStep = (index) => {
+        const newStepList = [...stepList];
+        newStepList.splice(index, 1);
+        setStepList(newStepList);
     }
 
     const AddPlace = () => {
@@ -29,9 +31,20 @@ function Publish() {
         }
     }
 
-    const Step = () => {
+    const Step = ({ index }) => {
+
+        const [key, setKey] = useState(index);
+
+        useEffect(() => {
+            setKey(index);
+        }, [index]);
+
+        const handleDelete = () => {
+            handleDeleteStep(index);
+        }
+
         return (
-            <div className='step'>
+            <div className='step' key={key}>
                 <MultiSelect
                     data={['Terre', 'Venus', 'Mars', 'Jupiter', 'Saturne', 'Neptune', 'Mercure', 'Uranus']}
                     icon={<HiOutlineMapPin size={20} />}
@@ -42,7 +55,7 @@ function Publish() {
                     nothingFound="Inconnu"
                     maxSelectedValues={1}
                 />
-                <HiXMark size={25} className="step-delete" onClick={DeleteStep}/>
+                <HiXMark size={25} className="step-delete" onClick={handleDelete} />
             </div>
         )
     }
