@@ -4,11 +4,36 @@ import './index.scss';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { MantineProvider } from '@mantine/core';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        fontFamily: 'Quicksand, sans-serif',
+        headings: { fontFamily: 'Ethnocentric, sans-serif' },
+        colors: {
+          'blue': ["#C7CEDC","#ACB8D1","#90A3CA","#728FC9","#517ACD","#2B65D9","#345FB6","#3A5A98","#3D5481","#3D4D6E"],
+          'orange': ["#F3EBE5","#E8D5C4","#E4C1A2","#E7AE7B","#F29C50","#DD8C45","#C77E3E","#A97242","#8F6744","#7A5D44"],
+          'pink': ["#FEFDFD","#EFDEE3","#E6BEC8","#E29BAE","#E67593","#F24976","#DC3F69","#C6395F","#A6405B","#8C4356"],
+        },
+        primaryShade: 5,
+        components: {
+          MenuItem: {
+            defaultProps: { color: 'white' },
+          },
+
+          Button: {
+            defaultProps: { radius: 'xl' },
+          },
+        }
+      }}
+    >
+      <App/>
+    </MantineProvider>
   </React.StrictMode>
 );
 
