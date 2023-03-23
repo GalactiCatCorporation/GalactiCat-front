@@ -22,7 +22,7 @@ function Header() {
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-trajet'>
-              <Link to=''><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link>
+              <Link to='/publier-trajet'><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link>
               <Link to=''><Menu.Item icon={<BiSearch size={14} />}>Rechercher un trajet</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>
