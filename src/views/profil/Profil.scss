@@ -1,5 +1,48 @@
 @import '/src/variables';
 
 #Profil {
-    
+    .information {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .nameold p, .nameold h2 {
+            margin: 0;
+        }
+
+        img {
+            width: 130px;
+        }
+
+        @media (max-width: 767px) {
+            img {
+                width: 80px;
+            }
+        }
+    }
+
+    a {
+        color: #8b0b0d;
+        border: 1px solid #8b0b0d;
+        padding: 5px 10px;
+        border-radius: 30px;
+        float: right;
+    }
+
+    .content {
+        margin: 25px 0; 
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    .mantine-Group-root {
+        justify-content: left;
+    }
+
+    .others-options {
+        float: right;
+    }
 }

@@ -71,6 +71,7 @@ h4 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .btn.btn-primary {
@@ -79,7 +80,6 @@ h4 {
   border-radius: 30px;
   color: #fff;
   font-size: 1rem;
-  padding: 10px 20px;
 }
 
 a {
@@ -89,8 +89,12 @@ a {
 .content {
   background-color: $black;
   width: 100%;
-  max-width: 400px;
   margin: 0 auto;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1.875rem;
+}
+
+.mantine-Modal-header,
+.mantine-Modal-body {
+  background-color: $black;
 }

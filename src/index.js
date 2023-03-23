@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { MantineProvider } from '@mantine/core';
+import './variables.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       withGlobalStyles
       withNormalizeCSS
       theme={{
+        colorScheme: 'dark',
         fontFamily: 'Quicksand, sans-serif',
         headings: { fontFamily: 'Ethnocentric, sans-serif' },
         colors: {

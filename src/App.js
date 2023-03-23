@@ -16,7 +16,7 @@ function App() {
       <Router>
         <HelmetProvider>
           <Helmet>
-            <title>GalactiCat - Le Covovoyage spatial vers l'infini et au-delà.</title>
+            <title>GalactiCat - Le Cocovoyage spatial vers l'infini et au-delà.</title>
             <meta name="description" content="GalactiCat est une application qui permet à des catstronautes de proposer des places dans leur vaisseaux lors de
           leurs trajets interplanétaires."/>
           </Helmet>
