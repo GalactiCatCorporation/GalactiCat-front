@@ -1,0 +1,47 @@
+@import '/src/variables';
+
+#Home {
+    form {
+        display: flex;
+        gap:20px;
+    }
+    .input {
+        margin-top: 20px;
+    }
+    
+    .content {
+        background-color: transparent;
+        padding: 15px;
+    }
+    
+    .mantine-Input-icon {
+        background-color: $orange;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        color: $white;
+    }
+    
+    .mantine-Select-input {
+        border-radius: 10px;
+        padding-left: 2.55rem !important;
+    }
+    
+    .mantine-InputWrapper-root label {
+        font-size: 1rem;
+    }
+
+    button.mantine-DateTimePicker-input {
+        border-radius: 10px;
+        padding-left: 2.55rem !important;
+    }
+}
+
+@media screen and (max-width:767px) {
+    #Home {
+        .content {
+            background-color: $black;
+            border-radius: 10px;
+            padding: 15px;
+        }
+    }
+}

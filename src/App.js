@@ -23,11 +23,11 @@ function App() {
         <div className='container'>
           <Routes>
             <Route path='/'>
-              <Route index element={[<Meta />, <Home />]} />
-              <Route path='connexion' element={[<Meta />, <Signin />]} />
-              <Route path='inscription' element={[<Meta />, <Signup />]} />
-              <Route path='publier-trajet' element={[<Meta />, <Publish />]} />
-              <Route path='mon-compte' element={[<Meta />, <Profil />]} />
+              <Route index element={[<Meta key="1" />, <Home key="2"/>]} />
+              <Route path='connexion' element={[<Meta key="1" />, <Signin key="2" />]} />
+              <Route path='inscription' element={[<Meta key="1" />, <Signup key="2" />]} />
+              <Route path='publier-trajet' element={[<Meta key="1" />, <Publish key="2" />]} />
+              <Route path='mon-compte' element={[<Meta key="1" />, <Profil key="2" />]} />
             </Route>
           </Routes>
         </div>
