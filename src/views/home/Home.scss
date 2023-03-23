@@ -11,10 +11,10 @@
         form {
             display: flex;
             gap:20px;
-        }
-        .input {
-            width: 200px;
-            margin: 0;
+            .input {
+                width: 200px;
+                margin: 0;
+            }
         }
     }
     
@@ -40,20 +40,43 @@
     }
 }
 
+@media screen and (max-width:991px) {
+    #Home {
+        .search-bar {
+            width: 85%;
+        }
+    }
+}
+
 @media screen and (max-width:767px) {
     #Home {
         .search-bar {
             background-color: $black;
             border-radius: 10px;
             padding: 15px;
-        }
-    }
-}
-
-@media screen and (max-width:991px) {
-    #Home {
-        .search-bar {
-            width: 85%;
+            width:100%;
+            max-width:350px;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            form {
+                flex-direction: column;
+                align-items: center;
+                .input {
+                    width: 100%;
+                }
+                .submit-button {
+                    .btn.btn-primary {
+                        background-color: #2B65D9;
+                        border: none;
+                        border-radius: 30px;
+                        color: #fff;
+                        font-size: 1rem;
+                        padding: 10px 20px;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }
