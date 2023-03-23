@@ -5,7 +5,7 @@ import './Auth.scss';
 
 function Signup() {
   return (
-    <>
+    <div id="Auth">
       <h1>S'inscrire</h1>
       <p>Vous avez déjà un compte ? <a href="/connexion">Se connecter</a></p>
       <div className='content'>
@@ -37,7 +37,7 @@ function Signup() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

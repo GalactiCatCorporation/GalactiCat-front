@@ -28,9 +28,9 @@ function Header() {
           </Menu>
           <ActionIcon size="lg" className='nav-messagerie'>
             <Link to=''>
-              <BiMessageRounded size={36} fill="#fff"/>
+              <BiMessageRounded size={36} fill="#fff" />
             </Link>
-          </ActionIcon>          
+          </ActionIcon>
           <Menu shadow="md" width={200}>
             <Menu.Target>
               <ActionIcon size="lg" className='nav-avatar'>
@@ -41,7 +41,7 @@ function Header() {
             <Menu.Dropdown className='nav-dropdown-profil'>
               <Link to='/connexion'><Menu.Item icon={<BiLogInCircle size={14} />}>Connexion</Menu.Item></Link>
               <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
-              <Link to=''><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
+              <Link to='/mon-compte'><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
               <Link to=''><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
               <Link to=''><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
             </Menu.Dropdown>
@@ -52,15 +52,15 @@ function Header() {
         <div className='header-nav'>
           <ActionIcon size="lg" className='nav-messagerie'>
             <Link to=''>
-              <BiMessageRounded size={36} fill="#fff"/>
+              <BiMessageRounded size={36} fill="#fff" />
             </Link>
           </ActionIcon>
 
           <Menu shadow="md" width={200}>
             <Menu.Target>
-            <ActionIcon size="lg" radius="xl" color="orange" variant="filled" className='nav-new-trajet'>
-              <BiPlus size={42} fill="#fff"/>
-            </ActionIcon>
+              <ActionIcon size="lg" radius="xl" color="orange" variant="filled" className='nav-new-trajet'>
+                <BiPlus size={42} fill="#fff" />
+              </ActionIcon>
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-trajet'>
@@ -79,7 +79,7 @@ function Header() {
             <Menu.Dropdown className='nav-dropdown-profil'>
               <Link to='/connexion'><Menu.Item icon={<BiLogInCircle size={14} />}>Connexion</Menu.Item></Link>
               <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
-              <Link to=''><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
+              <Link to='/mon-compte'><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
               <Link to=''><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
               <Link to=''><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
             </Menu.Dropdown>

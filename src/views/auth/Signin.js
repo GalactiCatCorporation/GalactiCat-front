@@ -8,7 +8,7 @@ import './Auth.scss';
 function Signin() {
   const id = useId();
   return (
-    <>
+    <div id='Auth'>
       <h1>Se connecter</h1>
       <p>Vous n'avez pas encore de compte ? <a href="/inscription">Créer un compte</a></p>
       <div className='content'>
@@ -32,7 +32,7 @@ function Signin() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
