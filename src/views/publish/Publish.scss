@@ -17,12 +17,9 @@
     color: $white;
 }
 
-.mantine-Input-wrapper {
+.mantine-Select-input {
     border-radius: 10px;
-
-    .mantine-Input-input input {
-        margin-left: 10px;
-    }
+    padding-left: 2.55rem !important;
 }
 
 .mantine-InputWrapper-root label {
