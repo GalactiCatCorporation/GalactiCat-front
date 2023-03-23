@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { HiOutlineMapPin, HiOutlineCalendarDays } from "react-icons/hi2";
 import { Select, Button } from '@mantine/core';
-import { DateTimePicker } from '@mantine/dates';
+import { DatePickerInput } from '@mantine/dates';
+import 'dayjs/locale/fr';
 import './SearchBar.scss';
 
 function SearchBar() {
   const [startValue, setStartValue] = useState('');
   const [endValue, setEndValue] = useState('');
+  const [dateValue, setDateValue] = useState(null);
 
   return (
       <div className='search-bar'>
@@ -33,13 +35,16 @@ function SearchBar() {
                 className="input"
                 placeholder="Destination"
             />
-            <DateTimePicker
+            <DatePickerInput
                 icon={<HiOutlineCalendarDays size={20} />}
-                placeholder="Date et heure"
+                placeholder="Date"
                 maw={400}
+                value={dateValue}
+                onChange={setDateValue}
                 mx="auto"
                 required
                 className="input"
+                locale="fr"
             />
             <div className='submit-button'>
                 <Button className='btn btn-primary' type='submit'>Rechercher</Button>

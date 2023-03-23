@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { HiOutlineMapPin, HiXMark, HiOutlineCalendarDays, HiMinusSmall, HiPlusSmall } from "react-icons/hi2";
 import { Select, Button } from '@mantine/core';
 import { DateTimePicker } from '@mantine/dates';
+import 'dayjs/locale/fr';
 import './Publish.scss';
 
 function Publish() {
     const [startValue, setStartValue] = useState('');
     const [endValue, setEndValue] = useState('');
+    const [dateValue, setDateValue] = useState(null);
     const [stepList, setStepList] = useState([]);
     const [place, setPlace] = useState(1);
 
@@ -98,8 +100,11 @@ function Publish() {
                         label="Date et heure de départ"
                         placeholder="Date et heure"
                         maw={400}
+                        value={dateValue}
+                        onChange={setDateValue}
                         mx="auto"
                         required
+                        locale="fr"
                     />
                     <div className="free-place">
                         <label>Nombre de place(s) disponible(s)</label>
