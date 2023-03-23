@@ -1,88 +1,89 @@
 @import '/src/variables';
 
-.input {
-    margin-top: 20px;
-}
-
-.content {
-    background-color: $black;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.mantine-Input-icon {
-    background-color: $blue;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    color: $white;
-}
-
-.mantine-Select-input {
-    border-radius: 10px;
-    padding-left: 2.55rem !important;
-}
-
-.mantine-InputWrapper-root label {
-    font-size: 1rem;
-}
-
-.steps {
-    margin-top: 20px;
-
-    .step {
-        display: flex;
-        align-items: center;
+#Publish {
+    .input {
         margin-top: 20px;
-
-        .mantine-InputWrapper-root {
-            width: 100%;
+    }
+    
+    .content {
+        background-color: $black;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    
+    .mantine-Input-icon {
+        background-color: $blue;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        color: $white;
+    }
+    
+    .mantine-Select-input {
+        border-radius: 10px;
+        padding-left: 2.55rem !important;
+    }
+    
+    .mantine-InputWrapper-root label {
+        font-size: 1rem;
+    }
+    
+    .steps {
+        margin-top: 20px;
+    
+        .step {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+    
+            .mantine-InputWrapper-root {
+                width: 100%;
+            }
+    
+            .step-delete {
+                color: red;
+                cursor: pointer;
+            }
         }
-
-        .step-delete {
-            color: red;
+    
+        p {
+            text-align: left;
+            text-decoration: underline;
             cursor: pointer;
         }
     }
-
-    p {
-        text-align: left;
-        text-decoration: underline;
-        cursor: pointer;
+    
+    button.mantine-DateTimePicker-input {
+        border-radius: 10px;
+        padding-left: 2.55rem !important;
     }
-}
-
-button.mantine-DateTimePicker-input {
-    border-radius: 10px;
-    padding-left: 2.55rem !important;
-}
-
-.free-place {
-    margin-top: 20px;
-}
-
-.qty {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-
-    .lower, .more {
-        background-color: $blue;
-        height: 45px;
-        width: 45px;
-        border-radius: 30px;
-        border: none;
-        color: $white;
-        font-size: 2rem;
-        cursor: pointer;
-
-        svg {
-            position: relative;
-            top: 4px;
+    
+    .free-place {
+        margin-top: 20px;
+    }
+    
+    .qty {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    
+        .lower, .more {
+            background-color: $blue;
+            height: 45px;
+            width: 45px;
+            border-radius: 30px;
+            border: none;
+            color: $white;
+            font-size: 2rem;
+            cursor: pointer;
+    
+            svg {
+                position: relative;
+                top: 4px;
+            }
+        }
+    
+        span {
+            font-size: 2rem;
         }
     }
-
-    span {
-        font-size: 2rem;
-    }
 }
-

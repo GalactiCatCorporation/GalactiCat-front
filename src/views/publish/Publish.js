@@ -59,7 +59,7 @@ function Publish() {
     }
 
     return (
-        <>
+        <div id="Publish">
             <h1>Publier un trajet</h1>
             <div className='content'>
                 <form>
@@ -114,7 +114,7 @@ function Publish() {
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 
