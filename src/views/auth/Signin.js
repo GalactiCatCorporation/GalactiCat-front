@@ -1,26 +1,21 @@
 import React from 'react'
-import { Input, PasswordInput, Button } from '@mantine/core';
-import { useId } from '@mantine/hooks';
-import { IMaskInput } from 'react-imask';
+import { TextInput, PasswordInput, Button } from '@mantine/core';
 import '../../index.scss';
 import './Auth.scss';
 
 function Signin() {
-  const id = useId();
   return (
     <div id='Auth'>
       <h1>Se connecter</h1>
       <p>Vous n'avez pas encore de compte ? <a href="/inscription">Créer un compte</a></p>
       <div className='content'>
         <form>
-          <Input.Wrapper id={id} label="Pseudonyme" required>
-            <Input
-              component={IMaskInput}
-              id={id}
-              placeholder="Pseudonyme"
-            />
-          </Input.Wrapper>
-          <PasswordInput 
+          <TextInput
+            placeholder="Pseudonyme"
+            label="Pseudonyme"
+            withAsterisk
+          />
+          <PasswordInput
             required
             placeholder="Mot de passe"
             label="Mot de passe"
