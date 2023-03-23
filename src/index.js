@@ -29,6 +29,10 @@ root.render(
           Button: {
             defaultProps: { radius: 'xl' },
           },
+
+          Radio: {
+            defaultProps: { color: 'orange'},
+          }
         }
       }}
     >

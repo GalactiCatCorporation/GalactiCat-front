@@ -1,7 +1,10 @@
 @import '/src/variables';
 
-#Home {
-    h1 {
-        margin-top: 5rem;
+#Search {
+    .filters {
+        display: flex;
+        .mantine-1avyp1d {
+            width: 30%;
+        }
     }
 }
