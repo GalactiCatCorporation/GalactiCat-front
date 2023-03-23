@@ -10,8 +10,8 @@ function Home() {
 
   return (
     <div id="Home">
-      <h1>Voyagez à travers la galaxie entre catstronautes</h1>
-      <div className='content'>
+      <h1>Voyagez à travers la galaxie<br/>entre catstronautes</h1>
+      <div className='search-bar'>
         <form>
             <Select
                 data={['Terre', 'Venus', 'Mars', 'Jupiter', 'Saturne', 'Neptune', 'Mercure', 'Uranus']}
