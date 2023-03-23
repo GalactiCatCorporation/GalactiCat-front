@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { HiOutlineMapPin, HiXMark, HiOutlineCalendarDays, HiMinusSmall, HiPlusSmall } from "react-icons/hi2";
-import { MultiSelect, Button } from '@mantine/core';
+import { Select, Button } from '@mantine/core';
 import { DateTimePicker } from '@mantine/dates';
 import './Publish.scss';
 
@@ -8,17 +8,10 @@ function Publish() {
     const [startValue, setStartValue] = useState('');
     const [endValue, setEndValue] = useState('');
     const [stepList, setStepList] = useState([]);
-    const [stepValue, setStepValue] = useState('');
     const [place, setPlace] = useState(1);
 
     const AddStep = () => {
         setStepList(stepList.concat(<Step key={stepList.length} index={stepList.length} />));
-    }
-
-    const handleDeleteStep = (index) => {
-        const newStepList = [...stepList];
-        newStepList.splice(index, 1);
-        setStepList(newStepList);
     }
 
     const AddPlace = () => {
@@ -32,8 +25,8 @@ function Publish() {
     }
 
     const Step = ({ index }) => {
-
         const [key, setKey] = useState(index);
+        const [stepValue, setStepValue] = useState('');
 
         useEffect(() => {
             setKey(index);
@@ -43,17 +36,22 @@ function Publish() {
             handleDeleteStep(index);
         }
 
+        const handleDeleteStep = (index) => {
+            const newStepList = [...stepList];
+            newStepList.splice(index, 1);
+            setStepList(newStepList);
+        }
+
         return (
             <div className='step' key={key}>
-                <MultiSelect
+                <Select
                     data={['Terre', 'Venus', 'Mars', 'Jupiter', 'Saturne', 'Neptune', 'Mercure', 'Uranus']}
                     icon={<HiOutlineMapPin size={20} />}
-                    placeholder="Ajouter une étape"
                     searchable
-                    searchValue={stepValue}
                     onSearchChange={setStepValue}
+                    searchValue={stepValue}
                     nothingFound="Inconnu"
-                    maxSelectedValues={1}
+                    placeholder="Ajouter une étape"
                 />
                 <HiXMark size={25} className="step-delete" onClick={handleDelete} />
             </div>
@@ -65,30 +63,30 @@ function Publish() {
             <h1>Publier un trajet</h1>
             <div className='content'>
                 <form>
-                    <MultiSelect
+                    <Select
                         data={['Terre', 'Venus', 'Mars', 'Jupiter', 'Saturne', 'Neptune', 'Mercure', 'Uranus']}
                         icon={<HiOutlineMapPin size={20} />}
                         label="Départ"
-                        placeholder="Planète de départ"
                         searchable
                         searchValue={startValue}
                         onSearchChange={setStartValue}
                         nothingFound="Inconnu"
                         required
-                        maxSelectedValues={1}
+                        placeholder="Planète de départ"
                     />
-                    <MultiSelect
+                    <Select
                         data={['Terre', 'Venus', 'Mars', 'Jupiter', 'Saturne', 'Neptune', 'Mercure', 'Uranus']}
                         icon={<HiOutlineMapPin size={20} />}
                         label="Arrivée"
-                        placeholder="Planète d'arrivée"
+                     
                         searchable
                         searchValue={endValue}
                         onSearchChange={setEndValue}
                         nothingFound="Inconnu"
                         required
                         className="input"
-                        maxSelectedValues={1}
+                        placeholder="Planète d'arrivée"
+             
                     />
                     <div className='steps'>
                         <span>Étape(s)</span>
