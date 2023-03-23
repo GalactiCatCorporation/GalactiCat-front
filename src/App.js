@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Home from './views/Home';
+import Home from './views/home/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Signup from './views/auth/Signup';
 import Signin from './views/auth/Signin';

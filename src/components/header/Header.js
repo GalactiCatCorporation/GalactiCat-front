@@ -12,7 +12,7 @@ function Header() {
       <div className='header'>
         <div className='header-logo'>
           <Link to='/'>
-            <Image maw={240} mx="auto" radius="md" src={logo} alt="GalactiCat Home " />
+            <Image maw={240} mx="auto" radius="md" src={logo} alt="GalactiCat logo" />
           </Link>
         </div>
         <div className='header-nav'>
@@ -64,7 +64,7 @@ function Header() {
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-trajet'>
-              <Link to=''><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link>
+              <Link to='/publier-trajet'><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link>
               <Link to=''><Menu.Item icon={<BiSearch size={14} />}>Rechercher un trajet</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>
