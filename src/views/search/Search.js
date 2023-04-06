@@ -1,6 +1,7 @@
 import React , { useState } from 'react';
 import './Search.scss';
 import SearchBar from '../../components/searchbar/SearchBar';
+import RidePreview from '../../components/ride-preview/RidePreview';
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer, Button, Radio } from '@mantine/core';
 
@@ -54,7 +55,9 @@ function Search() {
         <Button onClick={reset} className="btn-reset" color="blue">Réinitialiser</Button>
       </Drawer>
 
-        <Button onClick={open} className="btn-filter" color="pink">Filtres</Button>
+      <Button onClick={open} className="btn-filter" color="pink">Filtres</Button>
+
+      <RidePreview/>
     </div>
   )
 }
