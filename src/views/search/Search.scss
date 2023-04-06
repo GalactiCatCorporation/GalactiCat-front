@@ -1,10 +1,33 @@
 @import '/src/variables';
 
 #Search {
+    .btn-filter {
+        position: fixed;
+        right: 0;
+        transform: rotate(-90deg);
+    }
     .filters {
         display: flex;
         .mantine-1avyp1d {
             width: 30%;
         }
+    }
+}
+.mantine-Drawer-root {
+    .mantine-Drawer-header h2 {
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+    .mantine-RadioGroup-label {
+        font-weight: bold;
+        margin-top:10px;
+        margin-bottom:10px;
+        font-size: 1.25rem;
+    }
+    .mantine-Radio-root {
+        margin-bottom:10px;
+    }
+    .mantine-Button-root {
+        margin-top:20px;
     }
 }

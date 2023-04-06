@@ -2,7 +2,7 @@ import React , { useState } from 'react';
 import './Search.scss';
 import SearchBar from '../../components/searchbar/SearchBar';
 import { useDisclosure } from '@mantine/hooks';
-import { Drawer, Button, Group, Radio } from '@mantine/core';
+import { Drawer, Button, Radio } from '@mantine/core';
 
 function Search() {
 
@@ -47,9 +47,7 @@ function Search() {
         <Button onClick={close}>Voir les trajets</Button>
       </Drawer>
 
-      <Group position="center">
-        <Button onClick={open}>Filtrer</Button>
-      </Group>
+        <Button onClick={open} className="btn-filter" color="pink">Filtres</Button>
     </div>
   )
 }
