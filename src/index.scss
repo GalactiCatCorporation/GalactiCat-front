@@ -95,6 +95,19 @@ a {
 }
 
 .mantine-Modal-header,
-.mantine-Modal-body {
+.mantine-Drawer-header,
+.mantine-Modal-body,
+.mantine-Drawer-content {
   background-color: $black;
+
+  label, 
+  h2,
+  .mantine-InputWrapper-label {
+    color: #fff;
+  }
+
+  .mantine-Radio-radio {
+    background-color: #25262b;
+    border: 0.0625rem solid #373A40;
+  }
 }

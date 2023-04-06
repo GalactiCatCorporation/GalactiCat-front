@@ -22,6 +22,20 @@
         }
     }
 
+    .block-options {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .mantine-Group-root {
+            justify-content: left;
+        }
+
+        .others-options {
+            float: right;
+        }
+    }
+
     a {
         color: #8b0b0d;
         border: 1px solid #8b0b0d;
@@ -36,13 +50,5 @@
         h2:first-of-type {
             margin-top: 0;
         }
-    }
-
-    .mantine-Group-root {
-        justify-content: left;
-    }
-
-    .others-options {
-        float: right;
     }
 }

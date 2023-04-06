@@ -14,7 +14,7 @@ root.render(
       withGlobalStyles
       withNormalizeCSS
       theme={{
-        colorScheme: 'dark',
+        // colorScheme: 'dark',
         fontFamily: 'Quicksand, sans-serif',
         headings: { fontFamily: 'Ethnocentric, sans-serif' },
         colors: {
