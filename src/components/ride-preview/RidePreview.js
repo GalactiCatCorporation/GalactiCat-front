@@ -39,6 +39,9 @@ function RidePreview() {
         <div className='ride-status'>
             <span className='status incoming'></span><span className='status-text'>A venir</span>
         </div>
+        <div className='ride-link'>
+            <a href="?">Voir le trajet {'>'}</a>
+        </div>
       </div>
   )
 }
