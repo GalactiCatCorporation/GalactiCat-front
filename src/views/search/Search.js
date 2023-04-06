@@ -2,7 +2,7 @@ import React , { useState } from 'react';
 import './Search.scss';
 import SearchBar from '../../components/searchbar/SearchBar';
 import { useDisclosure } from '@mantine/hooks';
-import { Drawer, Button, Group, Radio } from '@mantine/core';
+import { Drawer, Button, Radio } from '@mantine/core';
 
 function Search() {
 
@@ -10,6 +10,12 @@ function Search() {
   const [hourValue, setHourValue] = useState(null);
   const [stepValue, setStepValue] = useState(null);
   const [seatsValue, setSeatsValue] = useState(null);
+
+  function reset() {
+    setHourValue(null);
+    setStepValue(null);
+    setSeatsValue(null);
+  }
 
   return (
     <div id="Search">
@@ -45,11 +51,10 @@ function Search() {
           <Radio value="2" label="2 ou plus" />
         </Radio.Group>
         <Button onClick={close}>Voir les trajets</Button>
+        <Button onClick={reset} className="btn-reset" color="blue">Réinitialiser</Button>
       </Drawer>
 
-      <Group position="center">
-        <Button onClick={open}>Filtrer</Button>
-      </Group>
+        <Button onClick={open} className="btn-filter" color="pink">Filtres</Button>
     </div>
   )
 }
