@@ -11,6 +11,12 @@ function Search() {
   const [stepValue, setStepValue] = useState(null);
   const [seatsValue, setSeatsValue] = useState(null);
 
+  function reset() {
+    setHourValue(null);
+    setStepValue(null);
+    setSeatsValue(null);
+  }
+
   return (
     <div id="Search">
       <h1>Rechercher un trajet</h1>
@@ -45,6 +51,7 @@ function Search() {
           <Radio value="2" label="2 ou plus" />
         </Radio.Group>
         <Button onClick={close}>Voir les trajets</Button>
+        <Button onClick={reset} className="btn-reset" color="blue">Réinitialiser</Button>
       </Drawer>
 
         <Button onClick={open} className="btn-filter" color="pink">Filtres</Button>
