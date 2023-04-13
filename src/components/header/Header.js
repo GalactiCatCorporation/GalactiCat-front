@@ -5,8 +5,16 @@ import { Menu, Button, Avatar, Image, ActionIcon } from '@mantine/core';
 import { BiSearch, BiArrowToTop, BiLogOutCircle, BiPlanet, BiRocket, BiMessageRounded, BiLogInCircle, BiPlus } from "react-icons/bi";
 import avatar from '../../assets/img/avatar.png';
 import logo from '../../assets/img/logo-galacticat.png';
+import { notifications } from '@mantine/notifications';
 
 function Header() {
+  function logout() {
+    localStorage.clear();
+    notifications.show({
+      title: 'Déconnexion',
+      message: 'Vous êtes bien déconnecté.',
+    })
+  }
   return (
     <>
       <div className='header'>
@@ -43,7 +51,7 @@ function Header() {
               <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
               <Link to='/mon-compte'><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
               <Link to='/mes-trajets'><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
-              <Link to=''><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
+              <Link to='/' onClick={logout}><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>
         </div>
