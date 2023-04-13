@@ -8,6 +8,7 @@ import Header from './components/header/Header';
 import Publish from './views/publish/Publish';
 import Profil from './views/profil/Profil';
 import Search from './views/search/Search';
+import MyRides from './views/my-rides/MyRides';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Meta from './components/meta/Meta';
 
@@ -32,6 +33,7 @@ function App() {
               <Route path='publier-trajet' element={[<Meta key="1"/>, <Publish key="2"/>]} />
               <Route path='rechercher-trajet' element={[<Meta key="1"/>, <Search key="2"/>]} />
               <Route path='mon-compte' element={[<Meta key="1"/>, <Profil key="2"/>]} />
+              <Route path='mes-trajets' element={[<Meta key="1"/>, <MyRides key="2"/>]} />
             </Route>
           </Routes>
         </div>

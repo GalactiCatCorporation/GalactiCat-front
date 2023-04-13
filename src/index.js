@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import './variables.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -38,7 +39,9 @@ root.render(
         }
       }}
     >
+      
       <App/>
+      <Notifications/>
     </MantineProvider>
   </React.StrictMode>
 );

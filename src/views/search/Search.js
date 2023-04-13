@@ -58,6 +58,7 @@ function Search() {
       <Button onClick={open} className="btn-filter" color="pink">Filtres</Button>
 
       <RidePreview/>
+      <RidePreview/>
     </div>
   )
 }

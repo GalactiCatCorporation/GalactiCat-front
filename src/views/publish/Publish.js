@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { HiOutlineMapPin, HiXMark, HiOutlineCalendarDays, HiMinusSmall, HiPlusSmall } from "react-icons/hi2";
 import { Select, Button } from '@mantine/core';
 import { DateTimePicker } from '@mantine/dates';
+import { notifications } from '@mantine/notifications';
 import 'dayjs/locale/fr';
 import './Publish.scss';
 
@@ -13,7 +14,14 @@ function Publish() {
     const [place, setPlace] = useState(1);
 
     const AddStep = () => {
-        setStepList(stepList.concat(<Step key={stepList.length} index={stepList.length} />));
+        if (stepList.length < 5) {
+            setStepList(stepList.concat(<Step key={stepList.length} index={stepList.length} />));
+        } else {
+            notifications.show({
+                title: 'Le trajet est assez long !',
+                message: 'Vous ne pouvez pas ajouter plus de 5 étapes.',
+              })
+        }
     }
 
     const AddPlace = () => {

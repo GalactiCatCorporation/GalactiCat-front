@@ -1,6 +1,9 @@
 @import '/src/variables';
 
 #Search {
+    .search-bar {
+        margin: 3rem auto;
+    }
     .btn-filter {
         position: fixed;
         right: 0;
