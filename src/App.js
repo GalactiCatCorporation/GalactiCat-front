@@ -12,6 +12,7 @@ import RideDetails from './views/rideDetails/RideDetails';
 import MyRides from './views/my-rides/MyRides';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Meta from './components/meta/Meta';
+import NotFound from './views/404';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
               <Route path='publier-trajet' element={[<Meta key="1"/>, <Publish key="2"/>]} />
               <Route path='rechercher-trajet' element={[<Meta key="1"/>, <Search key="2"/>]} />
               <Route path='mon-compte' element={[<Meta key="1"/>, <Profil key="2"/>]} />
+              <Route path='mes-trajets' element={[<Meta key="1"/>, <MyRides key="2"/>]} />
+              <Route path='trajet/:id' element={[<Meta key="1"/>, <RideDetails key="2"/>]} />
+              <Route path='*' element={<NotFound />}/>
             </Route>
           </Routes>
         </div>
