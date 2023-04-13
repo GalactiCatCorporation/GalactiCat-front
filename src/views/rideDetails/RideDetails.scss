@@ -1,0 +1,31 @@
+@import '/src/variables';
+
+#RideDetails {
+    .mantine-Timeline-itemTitle {
+        color: #fff;
+    }
+
+    .mantine-Timeline-root {
+        margin-top: 20px;
+    }
+
+    .content {
+        position: relative;
+
+        .block-timeline::before {
+            content: "";
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1px;
+            height: 80%;
+            background-color: #1F1F1F;
+        }
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+}

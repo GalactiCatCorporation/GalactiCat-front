@@ -27,7 +27,7 @@ function Profil() {
   return (
     <div id="Profil">
       <h1>Mon compte</h1>
-      <div className='information'>
+      <div className='informations'>
         <div className='nameold'>
           <h2>Jean Zorglub</h2>
         </div>

@@ -1,7 +1,7 @@
 @import '/src/variables';
 
 #Profil {
-    .information {
+    .informations {
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -49,6 +49,26 @@
 
         h2:first-of-type {
             margin-top: 0;
+        }
+    }
+
+    .mantine-Menu-dropdown {
+        background-color: $blue;
+        border: 1px solid $blue;
+
+        &::before {
+            content: " ";
+            width: 10px;
+            height: 10px;
+            background-color: #2B65D9;
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: rotate(45deg);
+        }
+
+        .mantine-Menu-item[data-hovered] {
+            background-color: #345FB6 !important;
         }
     }
 }
