@@ -5,20 +5,11 @@ import { Menu, Button, Avatar, Image, ActionIcon } from '@mantine/core';
 import { BiSearch, BiArrowToTop, BiLogOutCircle, BiPlanet, BiRocket, BiMessageRounded, BiLogInCircle, BiPlus } from "react-icons/bi";
 import avatar from '../../assets/img/avatar.png';
 import logo from '../../assets/img/logo-galacticat.png';
-import { notifications } from '@mantine/notifications';
+import AuthService from '../../services/authService';
 
 function Header() {
-  function logout() {
-    localStorage.clear();
-    notifications.show({
-      title: 'Déconnexion',
-      message: 'Vous êtes bien déconnecté.',
-    })
-  }
 
-  function isLoggedIn() {
-    return localStorage.getItem('token') ? true : false;
-  }
+  const isLoggedIn = AuthService.isLoggedIn;
   
   return (
     <>
@@ -52,16 +43,16 @@ function Header() {
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-profil'>
-              { !isLoggedIn() ?
-              <>
-              <Link to='/connexion'><Menu.Item icon={<BiLogInCircle size={14} />}>Connexion</Menu.Item></Link>
-              <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
-              </>
-              :
+              { isLoggedIn ?
               <>
               <Link to='/mon-compte'><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
               <Link to='/mes-trajets'><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
-              <Link to='/' onClick={logout}><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
+              <Link to='/' onClick={() => AuthService.logout()}><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
+              </>
+              :
+              <>
+              <Link to='/connexion'><Menu.Item icon={<BiLogInCircle size={14} />}>Connexion</Menu.Item></Link>
+              <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
               </>
               }
             </Menu.Dropdown>
@@ -97,11 +88,18 @@ function Header() {
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-profil'>
+            { isLoggedIn ?
+              <>
+              <Link to='/mon-compte'><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
+              <Link to='/mes-trajets'><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
+              <Link to='/' onClick={() => AuthService.logout()}><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
+              </>
+              :
+              <>
               <Link to='/connexion'><Menu.Item icon={<BiLogInCircle size={14} />}>Connexion</Menu.Item></Link>
               <Link to='/inscription'><Menu.Item icon={<BiLogInCircle size={14} />}>Inscription</Menu.Item></Link>
-              <Link to='/mon-compte'><Menu.Item icon={<BiPlanet size={14} />}>Profil</Menu.Item></Link>
-              <Link to=''><Menu.Item icon={<BiRocket size={14} />}>Mes trajets</Menu.Item></Link>
-              <Link to=''><Menu.Item icon={<BiLogOutCircle size={14} />}>Déconnexion</Menu.Item></Link>
+              </>
+              }
             </Menu.Dropdown>
           </Menu>
         </div>

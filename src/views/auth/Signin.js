@@ -2,9 +2,9 @@ import React from 'react'
 import { TextInput, PasswordInput, Button } from '@mantine/core';
 import '../../index.scss';
 import './Auth.scss';
-import axios from 'axios';
 import { notifications } from '@mantine/notifications';
 import { useNavigate } from "react-router-dom";
+import AuthService from '../../services/authService';
 
 function Signin() {
   const [pseudo, setPseudo] = React.useState();
@@ -15,11 +15,10 @@ function Signin() {
   const handleSubmit = e => {
     e.preventDefault()
 
-    axios
-      .post("http://localhost:8888/api/v1/auth/authenticate", { 'email': pseudo, password })
-      .then(response => {
-        localStorage.setItem('token', response.data.token);
+    AuthService.login(pseudo, password)
+      .then(() => {
         navigate("/");
+        window.location.reload();
       })
       .catch(error => {
         notifications.show({
@@ -30,7 +29,7 @@ function Signin() {
           color: 'red',
         });
       })
-  }
+    }
 
   return (
     <div id='Auth'>

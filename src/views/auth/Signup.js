@@ -2,9 +2,9 @@ import React from 'react'
 import { TextInput, PasswordInput, Button } from '@mantine/core';
 import '../../index.scss';
 import './Auth.scss';
-import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { notifications } from '@mantine/notifications';
+import AuthService from '../../services/authService';
 
 function Signup() {
   const [pseudo, setPseudo] = React.useState();
@@ -28,11 +28,11 @@ function Signup() {
           color: 'red',
         });
       } else {
-        axios
-          .post("http://localhost:8888/api/v1/auth/register", { 'email': pseudo, password })
-          .then(response => {
-            localStorage.setItem('token', response.data.token);
+
+        AuthService.register(pseudo, password)
+          .then(() => {
             navigate("/");
+            window.location.reload();
           })
           .catch(error => {
             notifications.show({
