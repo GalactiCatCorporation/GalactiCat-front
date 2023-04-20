@@ -1,0 +1,71 @@
+@import '/src/variables';
+
+.search-bar {
+    width: 60%;
+    margin: 10rem auto 5rem;
+    form {
+        display: flex;
+        gap:20px;
+        .input {
+            width: 200px;
+            margin: 0;
+        }
+        .mantine-Input-icon {
+            background-color: $orange;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            color: $white;
+        }
+        
+        .mantine-Select-input {
+            border-radius: 10px;
+            padding-left: 2.55rem !important;
+        }
+        
+        .mantine-InputWrapper-root label {
+            font-size: 1rem;
+        }
+    
+        button.mantine-DatePickerInput-input {
+            border-radius: 10px;
+            padding-left: 2.55rem !important;
+        }
+    }
+}
+
+@media screen and (max-width:991px) {
+    .search-bar {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .search-bar {
+        background-color: $black;
+        border-radius: 10px;
+        padding: 15px;
+        width:100%;
+        max-width:350px;
+        padding: 1.5rem;
+        margin-top: 3rem;
+        form {
+            flex-direction: column;
+            align-items: center;
+            .input {
+                width: 100%;
+            }
+            .submit-button {
+                .btn.btn-primary {
+                    background-color: #2B65D9;
+                    border: none;
+                    border-radius: 30px;
+                    color: #fff;
+                    font-size: 1rem;
+                    padding: 10px 20px;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@import '/src/variables';
+
+#RideDetails {
+    .mantine-Stepper-stepBody {
+        color: #fff;
+    }
+
+    .stepper {
+        margin-top: 40px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ride-pilote {
+        display: flex;
+        align-items: center;
+
+        .pilote-right {
+            margin-left: 10px;
+            .date {
+                font-weight: bold;
+                font-size: 0.9rem;;
+            }
+            .title {
+                font-size: 0.9rem;;
+            }
+        }
+    }
+
+    .informations {
+        margin-top: 40px;
+
+        .spaceship {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            .title {
+                text-transform: uppercase;
+            }
+        }
+        p {
+            margin: 0;
+        }
+    }
+    
+
+
+    .mantine-Stepper-stepIcon {
+        background: transparent;
+        color: #fff;
+
+        &:has(.mantine-Stepper-stepCompletedIcon) {
+            background: $pink;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+@import '/src/variables';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:90%;
+    margin: 10px auto 0;
+    padding:20px 30px;
+    border-radius: 100px;
+    background-color: $black;
+    z-index: 99;
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    // Bouton Nouveau trajet
+    .nav-dropdown-trajet {
+        background-color: $pink;
+        border-color: $pink;
+    }
+    .nav-dropdown-trajet button[data-hovered="true"] {
+        background-color: $pink-hover;
+        border-color: $pink-hover;
+    }
+    .nav-dropdown-trajet::before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        background-color: $pink;
+        position: absolute;
+        top:-5px;
+        left:50%;
+        transform: rotate(45deg);
+    }
+
+    // Bouton Messagerie
+    button.nav-messagerie:hover, button.nav-avatar:hover {
+        background-color: transparent;
+    }
+
+    // Bouton Profil
+    .nav-dropdown-profil {
+        background-color: $blue;
+        border-color: $blue;
+    }
+    .nav-dropdown-profil button[data-hovered="true"] {
+        background-color: $blue-hover;
+        border-color: $blue-hover;
+    }
+    .nav-dropdown-profil::before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        background-color: $blue;
+        position: absolute;
+        top:-5px;
+        left:50%;
+        transform: rotate(45deg);
+    }
+
+
+}
+
+.header-mobile {
+    position: fixed;
+    bottom:10px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: $black;
+    border-radius: 100px;
+    padding: 0px 10px;
+    width:80%;
+    max-width: 400px;
+    z-index: 99;
+    .header-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    // Bouton Messagerie
+    button.nav-messagerie:hover, button.nav-avatar:hover {
+        background-color: transparent;
+    }
+    // Bouton Nouveau trajet
+    .nav-new-trajet {
+        width:60px;
+        height: 60px;
+        transform: translateY(-50%);
+    }
+    .nav-dropdown-trajet {
+        background-color: $orange;
+        border-color: $orange;
+    }
+    .nav-dropdown-trajet button[data-hovered="true"] {
+        background-color: $orange-hover;
+        border-color: $orange-hover;
+    }
+
+    // Bouton Profil
+    .nav-dropdown-profil {
+        background-color: $blue;
+        border-color: $blue;
+    }
+    .nav-dropdown-profil button[data-hovered="true"] {
+        background-color: $blue-hover;
+        border-color: $blue-hover;
+    }
+}
+@media screen and (max-width:767px) {
+    .header {
+        display: none;
+    }
+}
+@media screen and (min-width:768px) {
+    .header-mobile {
+        display: none;
+    }
+}
