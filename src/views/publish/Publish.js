@@ -138,6 +138,7 @@ function Publish() {
                         mx="auto"
                         required
                         locale="fr"
+                        minDate={new Date()}
                     />
                     <div className="free-place">
                         <label>Nombre de place(s) disponible(s)</label>

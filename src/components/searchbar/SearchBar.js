@@ -45,6 +45,7 @@ function SearchBar() {
                 required
                 className="input"
                 locale="fr"
+                minDate={new Date()}
             />
             <div className='submit-button'>
                 <Button className='btn btn-primary' type='submit'>Rechercher</Button>
