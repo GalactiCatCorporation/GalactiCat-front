@@ -26,7 +26,7 @@ function Header() {
             </Menu.Target>
 
             <Menu.Dropdown className='nav-dropdown-trajet'>
-              <Link to='/publier-trajet'><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link>
+              {isLoggedIn && <Link to='/publier-trajet'><Menu.Item icon={<BiArrowToTop size={14} />}>Publier un trajet</Menu.Item></Link> }
               <Link to='/rechercher-trajet'><Menu.Item icon={<BiSearch size={14} />}>Rechercher un trajet</Menu.Item></Link>
             </Menu.Dropdown>
           </Menu>

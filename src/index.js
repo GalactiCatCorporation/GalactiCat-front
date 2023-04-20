@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import './variables.scss';
+import { ModalsProvider } from '@mantine/modals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -39,9 +40,11 @@ root.render(
         }
       }}
     >
-      
+            <ModalsProvider>
       <App/>
+      </ModalsProvider>
       <Notifications/>
+
     </MantineProvider>
   </React.StrictMode>
 );

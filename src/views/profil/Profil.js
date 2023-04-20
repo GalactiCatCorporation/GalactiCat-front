@@ -9,20 +9,17 @@ function Profil() {
   const [opened, { open, close }] = useDisclosure(false);
 
   const openDeleteModal = () =>
-    modals.openConfirmModal({
-      title: 'Delete your profile',
-      centered: true,
-      children: (
-        <Text size="sm">
-          Are you sure you want to delete your profile? This action is destructive and you will have
-          to contact support to restore your data.
-        </Text>
-      ),
-      labels: { confirm: 'Delete account', cancel: "No don't delete it" },
-      confirmProps: { color: 'red' },
-      onCancel: () => console.log('Cancel'),
-      onConfirm: () => console.log('Confirmed'),
-    });
+  modals.openConfirmModal({
+    title: 'Supprimer mon profil',
+    centered: true,
+    children: (
+      <Text size="sm" color='white'>
+        Êtes-vous sûr de vouloir supprimer votre profil ?
+      </Text>
+    ),
+    labels: { confirm: 'Oui, je veux', cancel: "Non, je ne veux pas" },
+    confirmProps: { color: 'red' },
+  });
 
   return (
     <div id="Profil">
