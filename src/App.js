@@ -13,6 +13,9 @@ import MyRides from './views/my-rides/MyRides';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Meta from './components/meta/Meta';
 import NotFound from './views/404';
+import logo from './assets/img/logo-galacticat.png';
+import { Link } from "react-router-dom";
+import { Image } from '@mantine/core';
 
 function App() {
   return (
@@ -26,6 +29,11 @@ function App() {
           </Helmet>
         </HelmetProvider>
         <Header />
+        <div className='header-logo-mobile'>
+          <Link to='/'>
+            <Image maw={240} mx="auto" radius="md" src={logo} alt="GalactiCat logo" />
+          </Link>
+        </div>
         <div className='container'>
           <Routes>
             <Route path='/'>
