@@ -6,6 +6,7 @@ import ridefly from '../../assets/img/ride-fly.png';
 function RidePreview() {
 
   return (
+    <a href="detail-trajet">
       <div className='ride-preview'>
         <div className='ride-pilote'>
             <Avatar size="lg" radius="xl"/>
@@ -43,6 +44,7 @@ function RidePreview() {
             <a href="?">Voir le trajet {'>'}</a>
         </div>
       </div>
+      </a>
   )
 }
 

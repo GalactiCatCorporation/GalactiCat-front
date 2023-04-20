@@ -44,7 +44,7 @@ function App() {
               <Route path='rechercher-trajet' element={[<Meta key="1"/>, <Search key="2"/>]} />
               <Route path='mon-compte' element={[<Meta key="1"/>, <Profil key="2"/>]} />
               <Route path='mes-trajets' element={[<Meta key="1"/>, <MyRides key="2"/>]} />
-              <Route path='trajet/:id' element={[<Meta key="1"/>, <RideDetails key="2"/>]} />
+              <Route path='detail-trajet' element={[<Meta key="1"/>, <RideDetails key="2"/>]} />
               <Route path='*' element={<NotFound />}/>
             </Route>
           </Routes>
