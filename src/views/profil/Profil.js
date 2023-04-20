@@ -4,6 +4,8 @@ import '../../index.scss';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, Group, Textarea, TextInput, Menu, Text } from '@mantine/core';
 import { modals } from '@mantine/modals';
+import { Link } from "react-router-dom";
+import AuthService from '../../services/authService';
 
 function Profil() {
   const [opened, { open, close }] = useDisclosure(false);
@@ -55,7 +57,7 @@ function Profil() {
       <div className='block-options'>
         <Group position="center" >
           <Button onClick={open} color="orange">Modifier profil</Button>
-          <Button color="orange" type='submit'>Mes trajets</Button>
+          <Button color="orange" type='button'><Link to='/mes-trajets' className='white'>Mes trajets</Link></Button>
         </Group>
         <Menu className="others-options">
           <Menu.Target>
@@ -64,7 +66,7 @@ function Profil() {
 
           <Menu.Dropdown>
             <Menu.Item onClick={openDeleteModal}>Supprimer mon compte</Menu.Item>
-            <Menu.Item>Déconnexion</Menu.Item>
+            <Link to='/' onClick={() => AuthService.logout()}><Menu.Item>Déconnexion</Menu.Item></Link>
           </Menu.Dropdown>
         </Menu>
       </div>

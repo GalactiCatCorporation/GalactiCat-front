@@ -18,7 +18,6 @@ function Signin() {
     AuthService.login(pseudo, password)
       .then(() => {
         navigate("/");
-        window.location.reload();
       })
       .catch(error => {
         notifications.show({

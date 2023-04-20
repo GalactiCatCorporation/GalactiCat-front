@@ -32,7 +32,6 @@ function Signup() {
         AuthService.register(pseudo, password)
           .then(() => {
             navigate("/");
-            window.location.reload();
           })
           .catch(error => {
             notifications.show({
