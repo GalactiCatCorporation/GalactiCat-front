@@ -8,37 +8,33 @@ class AuthService {
         this.checkLoggedIn();
     }
     
-  login(email, password) {
-    return axios
+  async login(email, password) {
+    const response = await axios
       .post(API_URL + 'authenticate', {
         email,
         password
-      })
-      .then(response => {
-        if (response.data.token) {
-          localStorage.setItem('token', response.data.token);
-        }
-        return response.data.token;
       });
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token);
+    }
+    return response.data.token;
   }
 
   logout() {
     localStorage.removeItem('token');
-    window.location.reload();
+    window.reload();
   }
 
-  register(email, password) {
-    return axios
-        .post(API_URL + 'register', {
-          email,
-          password
-        })
-        .then(response => {
-            if (response.data.token) {
-              localStorage.setItem('token', response.data.token);
-            }
-            return response.data.token;
-        });
+  async register(email, password) {
+    const response = await axios
+      .post(API_URL + 'register', {
+        email,
+        password
+      });
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token);
+    }
+    return response.data.token;
   }
 
   getCurrentUser() {

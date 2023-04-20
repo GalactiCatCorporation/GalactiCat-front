@@ -3,6 +3,7 @@ import { HiOutlineMapPin, HiXMark, HiOutlineCalendarDays, HiMinusSmall, HiPlusSm
 import { Select, Button } from '@mantine/core';
 import { DateTimePicker } from '@mantine/dates';
 import { notifications } from '@mantine/notifications';
+import RideService from '../../services/rideService';
 import 'dayjs/locale/fr';
 import './Publish.scss';
 
@@ -12,6 +13,30 @@ function Publish() {
     const [dateValue, setDateValue] = useState(null);
     const [stepList, setStepList] = useState([]);
     const [place, setPlace] = useState(1);
+
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        RideService.createRide(startValue, endValue, stepList, dateValue)
+            .then(() => {
+                notifications.show({
+                    withCloseButton: true,
+                    autoClose: 5000,
+                    title: "Trajet publié",
+                    message: 'Votre trajet a bien été publié, vous pouvez le retrouver sur la page Mes Trajets.',
+                    color: 'green',
+                });
+            })
+            .catch(error => {
+            notifications.show({
+                withCloseButton: true,
+                autoClose: 5000,
+                title: "Erreur " + error,
+                message: 'Erreur lors de la création du vol.',
+                color: 'red',
+            });
+            })
+      }
 
     const AddStep = () => {
         if (stepList.length < 5) {
@@ -72,7 +97,7 @@ function Publish() {
         <div id="Publish">
             <h1>Publier un trajet</h1>
             <div className='content'>
-                <form>
+                <form method="post" onSubmit={handleSubmit}>
                     <Select
                         data={['Terre', 'Venus', 'Mars', 'Jupiter', 'Saturne', 'Neptune', 'Mercure', 'Uranus']}
                         icon={<HiOutlineMapPin size={20} />}
